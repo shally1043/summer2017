@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Playing with Alert</title>
+</head>
+<body>
+
+    <script>
+        var txt;
+        var r = confirm("Press a button!");
+        if (r == true) {
+            txt = "You pressed OK!";
+        } else {
+            txt = "You pressed Cancel!";
+        }
+
+        alert(txt);
+
+        var person = prompt("Please enter your name.", "Harry Potter");
+        if(person != null){
+            person = "Hello " + person + ". How are you today?";
+        }else{
+            person = "I see you're not OK with this.";
+        }
+
+        alert(person);
+
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
