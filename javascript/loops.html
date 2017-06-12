@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loopy</title>
+    </head>
+    <body>
+        <script>
+            // this is a single line comment. It is lonely
+
+            /*
+             * This is a multi-line comment.  What a party!
+             */
+
+            document.write("<select>"); 
+            var i = 1;
+            while(i < 1000){
+                document.write("<option>");
+                document.write(i);
+                document.write("</option>");
+                i = i * 4;  // Multiplying i by 4.  Make sure it ain't 0.
+            }
+            document.write("</select>");
+        </script>
+        <hr />
+        <script>
+            alert("i is " + i + " before the second loop.");
+            document.write("<select>"); 
+            for(i = 0; i <= 1000; i = i + 1){
+                document.write("<option>");
+                document.write(i);
+                document.write("</option>");
+            }
+            document.write("</select>");
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
