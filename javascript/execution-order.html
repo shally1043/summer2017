@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>execution-order</title>
+        <script src="divide.js"></script>
+        <style>
+            HR{ margin-top: 2em; }
+        </style>
+    </head>
+    <body>
+        <p>Javascript is executed as the browser encounters it.</p>
+        <hr />
+        <div style="border:1px solid pink">
+            <script>
+                document.write( divide( (3*4), (2 + 3) ));
+            </script>
+        </div>
+        <p>Just above here there should be a number.  It is the result 
+            of a call to the divide method which is defined in 
+            divide.js
+        </p>
+        <hr />
+        <div style="border: 1px solid black">
+        <script>
+            document.write( multiply(2, 7) );
+        </script>
+        </div>
+        <p> Just above here there should be a number but there isn't. That
+            is because the multiply function has not been defined yet.</p>
+        <hr />
+        <script>
+            function multiply( thing1, thing2){
+                return thing1 * thing2;
+            }
+        </script>
+        <div style="border: 1px solid #336699">
+            <script>
+                document.write( multiply(2, 7) );
+            </script>
+        </div>
+        <p>Just above here you should see a number because we defined 
+            the &quot;multiply&quot; function before we called it a 
+            second time.
+        </p>
+    </body>
+</html>
