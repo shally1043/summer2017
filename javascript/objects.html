@@ -8,11 +8,15 @@
         <h4>Objects</h4>
         <table>
             <script>
-                makeRow("Name", hotel.name);
-                makeRow("Rooms", hotel.rooms);
-                makeRow("Booked Rooms", hotel.booked);
-                makeRow("Gym", hotel.gym);
-
+                for(i = 0; i < allHotels.length; i++) {
+                    makeRow("Name", allHotels[i].name);
+                    makeRow("Rooms", allHotels[i].rooms);
+                    makeRow("Booked Rooms", allHotels[i].booked);
+                    makeRow("Gym", allHotels[i].gym);
+                    makeRow("Room Types", allHotels[i].roomTypes);
+                    makeRow("Has Openings:", allHotels[i].hasOpenings());
+                    document.write("<TR><TD colspan='2'><hr /></TD></TR>");
+                }
             </script>
         </table>
     </body>
