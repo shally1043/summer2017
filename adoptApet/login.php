@@ -9,6 +9,8 @@
     if(isset($_SESSION['loginMessage'])){
         echo "<div class='loginMessage'>".$_SESSION['loginMessage']."</div>";
     }
+
+    echo "You came here from: ".$_SESSION['requestedURI']."<br/>";
 ?>
     <form action="doLogin.php" method="post">
         <label for="email">Email:</label>

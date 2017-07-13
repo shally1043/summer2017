@@ -17,7 +17,7 @@
         $_SESSION['email'] = $_POST['email'];
         $_SESSION['firstName'] = "Person";
         $_SESSION['lastName']  = "Jones";
-        header("Location: index.php");
+        header("Location: ".$_SESSION['requestedURI']);
         exit();
     }else{
         $_SESSION['loginMessage'] = "Username or password is incorrect.";
