@@ -3,8 +3,10 @@
 <html>
 <head>
     <title>Adopt A Pet Login</title>
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+<?php include "header.php"; ?>
 <?php
     if(isset($_SESSION['loginMessage'])){
         echo "<div class='loginMessage'>".$_SESSION['loginMessage']."</div>";
