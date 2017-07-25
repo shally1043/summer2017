@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- http://www.loc.gov/pictures/search/?q=manhattan&fo=json -->
+    <title>Snack List</title>
+    <script>
+        function getSnacks(){
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "snacks.html", false);
+            xhr.send();
+
+            if(xhr.status == 200){
+                document.getElementById('theList').innerHTML =
+                    xhr.responseText;
+            }else{
+                alert(xhr.statusText);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Snacks!</h1>
+    <hr />
+    <div id="theList"></div>
+    <hr />
+    <button onClick="getSnacks()">Go!</button>
+</body>
+</html>
