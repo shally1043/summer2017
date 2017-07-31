@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Pictures</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
     <script src="pictures.js"></script>
 </head>
 <body>
@@ -13,7 +15,17 @@
     <input type="text" id="searchTerm" size="50"/>
     <button onclick="startSearch()">Search</button>
 </div>
-<div id="output"></div>
+<div id="output" class="outputClass"></div>
 <hr />
+<script>$('.outputClass').slick();</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

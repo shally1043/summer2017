@@ -41,18 +41,26 @@ function doSearch(searchTerm){
 function addImage(captionText, url, altText){
     var aFigure = createImage(captionText, url, altText);
     //document.getElementById("output").appendChild(aFigure);
-    $('#output').appendChild(aFigure);
+    $('#output').append(aFigure);
 }
 
 function processResponse(data){
     console.log(data);
+
+    $('.outputClass').slick('unslick');
+
     document.getElementById("output").innerHTML = "";
+
     for(var i = 0; i < data.results.length; i++) {
         if(!data.results[i].image.alt.includes("not digitized")) {
             addImage(data.results[i].title, data.results[i].image.full, data.results[i].image.alt);
         }
     }
+
+    $('.outputClass').slick();
 }
+
+
 
 
 
