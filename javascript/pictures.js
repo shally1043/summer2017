@@ -41,6 +41,7 @@ function doSearch(searchTerm){
 function addImage(captionText, url, altText){
     var aFigure = createImage(captionText, url, altText);
     //document.getElementById("output").appendChild(aFigure);
+    $('#output').appendChild(aFigure);
 }
 
 function processResponse(data){
