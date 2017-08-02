@@ -1,5 +1,6 @@
-<?php include "loginCheck.php" ?>
 <?php require "database.php"   ?>
+<?php include "loginCheck.php" ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -22,6 +23,7 @@
                 <td>Age</td>
                 <td>Gender</td>
                 <td>Available</td>
+                <td>&nbsp;</td>
             </tr>
         </thead>
         <tbody>
@@ -33,15 +35,18 @@
             <tr>
                 <td><?=$aRow['species']?></td>
                 <td><?=$aRow['breed']?></td>
-                <td><?=$aRow['name']?></td>
+                <td><a href="petDetails.php?id=<?=$aRow['id']?>"><?=$aRow['name']?></a></td>
                 <td><?=$aRow['age']?></td>
                 <td><?=$aRow['gender']?></td>
                 <td><?=$aRow['avail']?></td>
+                <td>
+                    <a href="doDeletePet.php?id=<?=$aRow['id']?>">X</a>
+                </td>
             </tr>
         <?php } ?>
         </tbody>
     </table>
-
+    <a href="createPet.php">Add a pet</a>&nbsp;&nbsp;<br />
     Adopt a pet!
     </body>
 </html>

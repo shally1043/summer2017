@@ -55,10 +55,24 @@
         $pstmt->execute();
     }
 
+    function createPet($species, $breed, $name, $age, $gender, $avail){
+        $db = getDB();
+        $pstmt = $db->prepare("insert into pets (species, breed, name, age, gender, avail) values (?, ?, ?, ?, ?, ?)");
+        $pstmt->bind_param('sssiss', $species, $breed, $name, $age, $gender, $avail);
+        $pstmt->execute();
+    }
+
     function checkPassword($email, $password){
         $db = getDB();
         $result = $db->query("select * from users where email = '$email' and password='$password'");
         return ($result->num_rows > 0);
+    }
+
+    function deletePet($id){
+        $db = getDB();
+        $pstmt = $db->prepare("delete from pets where id=?");
+        $pstmt->bind_param('i', $id);
+        $pstmt->execute();
     }
 
 ?>
