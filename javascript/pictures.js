@@ -47,6 +47,12 @@ function addImage(captionText, url, altText){
 function processResponse(data){
     console.log(data);
 
+    $('#resultCount').text("Found " + data.results.length + " pictures for you.");
+
+    if(data.results.length == 0){
+        return;
+    }
+
     $('.outputClass').slick('unslick');
 
     document.getElementById("output").innerHTML = "";
@@ -57,7 +63,14 @@ function processResponse(data){
         }
     }
 
-    $('.outputClass').slick();
+    $('.outputClass').slick(
+        {
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            variableWidth: true
+        }
+    );
 }
 
 
