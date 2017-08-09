@@ -2,7 +2,7 @@
 <?php include "loginCheck.php" ?>
 <?php
         $db = getDB();
-        $result = $db->query("select id, species, breed, name, age, gender, avail from pets where id=".$_GET['id']);
+        $result = $db->query("select id, species, breed, name, age, gender, avail, photo from pets where id=".$_GET['id']);
         $result->data_seek(0);
         $aRow = $result->fetch_assoc();
 ?>
@@ -22,6 +22,7 @@
             <tr>
                 <td>Species</td>
                 <td><input type="text" name="species" id="species" value=<?=$aRow['species']?>></td>
+                <td rowspan="6"><img src="<?=$imageURLPrefix?>/<?=$aRow['photo']?>" /></td>
             </tr>
             <tr>
                 <td>Breed</td>

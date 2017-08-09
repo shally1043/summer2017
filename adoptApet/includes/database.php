@@ -55,6 +55,13 @@
         $pstmt->execute();
     }
 
+    function createPetWithPhoto($species, $breed, $name, $age, $gender, $avail, $photo){
+        $db = getDB();
+        $pstmt = $db->prepare("insert into pets (species, breed, name, age, gender, avail, photo) values (?, ?, ?, ?, ?, ?, ?)");
+        $pstmt->bind_param('sssisss', $species, $breed, $name, $age, $gender, $avail, $photo);
+        $pstmt->execute();
+    }
+
     function createPet($species, $breed, $name, $age, $gender, $avail){
         $db = getDB();
         $pstmt = $db->prepare("insert into pets (species, breed, name, age, gender, avail) values (?, ?, ?, ?, ?, ?)");

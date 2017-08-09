@@ -1,7 +1,8 @@
 <?php
     session_start();
-
+    require "constants.php";
     require "database.php";
+
 
     $hasError = false;
     $errorMessage = "";
@@ -43,13 +44,22 @@
     }
 
 
-    createPet($_POST['species'], $_POST['breed'], $_POST['name'], $_POST['age'], $_POST['gender'], $_POST['avail']);
 
-    if(isset($_FILES['photo'])){
+    if($_FILES['photo']['error'] == 0){
+        error_log("Using createPetWithPhoto");
+
         move_uploaded_file(
             $_FILES['photo']['tmp_name'],
-            "C:\\hunter\\summer2017\\adoptApet\\images\\".$_FILES['photo']['name']
+            $imageFileLocation.$_FILES['photo']['name']
         );
+
+        createPetWithPhoto($_POST['species'], $_POST['breed'], $_POST['name'], $_POST['age'], $_POST['gender'], $_POST['avail'], $_FILES['photo']['name']);
+
+    }else{
+        error_log("Using createPet");
+
+        createPet($_POST['species'], $_POST['breed'], $_POST['name'], $_POST['age'], $_POST['gender'], $_POST['avail']);
+
     }
     header("Location: index.php");
     exit();

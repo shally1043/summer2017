@@ -24,7 +24,7 @@
         <input type="text" id="name" name="name" /><br/>
 
         <label for="age">Age:</label>
-        <input type="number" id="age" name="age" /><br/>
+        <input type="number" id="age" name="age" min="1" /><br/>
 
         <label for="gender">Gender:</label>
         <select id="gender" name="gender">
