@@ -75,6 +75,13 @@
         $pstmt->execute();
     }
 
+    function updatePet($species, $breed, $name, $age, $gender, $avail,$id){
+        $db = getDB();
+        $pstmt = $db->prepare("update pets set species=?,breed=?,name=?,age=?,gender=?,avail=? where id=?");
+        $pstmt->bind_param('sssissi', $species, $breed, $name, $age, $gender, $avail, $id);
+        $pstmt->execute();
+    }
+    //"update pets set species='$species', breed='$breed',name='$name',age='$age',gender='$gender',avail='$avail' where id=?"
 ?>
 
 

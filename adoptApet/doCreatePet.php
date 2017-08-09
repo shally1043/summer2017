@@ -42,7 +42,15 @@
         exit();
     }
 
+
     createPet($_POST['species'], $_POST['breed'], $_POST['name'], $_POST['age'], $_POST['gender'], $_POST['avail']);
+
+    if(isset($_FILES['photo'])){
+        move_uploaded_file(
+            $_FILES['photo']['tmp_name'],
+            "C:\\hunter\\summer2017\\adoptApet\\images\\".$_FILES['photo']['name']
+        );
+    }
     header("Location: index.php");
     exit();
 

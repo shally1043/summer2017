@@ -17,7 +17,7 @@
     <?php include "header.php"; ?>
 
     <form action="doUpdatePet.php" method="POST">
-        <input type="hidden" name="id" value="<?=aRow['id']?>" />
+        <input type="hidden" name="id" value="<?=$aRow['id']?>" />
         <table id="petTable" border="1" width="100%">
             <tr>
                 <td>Species</td>
@@ -37,11 +37,24 @@
             </tr>
             <tr>
                 <td>Gender</td>
-                <td><input type="text" name="gender" id="gender" value=<?=$aRow['gender']?>></td>
+                <td>
+
+                    <select id="gender" name="gender">
+                        <option value="M" <?=("M" == $aRow['gender']) ? " SELECTED " : "" ?>>Male</option>
+                        <option value="F" <?=("F" == $aRow['gender']) ? " SELECTED " : "" ?>>Female</option>
+                        <option value="U" <?=("U" == $aRow['gender']) ? " SELECTED " : "" ?>>Unknown</option>
+                    </select>
+
+                </td>
             </tr>
             <tr>
                 <td>Available</td>
-                <td><input type="text" name="avail" id="avail" value=<?=$aRow['avail']?>></td>
+                <td>
+                    <select id="avail" name="avail">
+                        <option value="AVAILABLE" <?=("AVAILABLE" == $aRow['avail']) ? " SELECTED " : "" ?> >Available</option>
+                        <option value="UNAVAILABLE" <?=("UNAVAILABLE" == $aRow['avail']) ? " SELECTED " : "" ?> >Unavailable</option>
+                    </select>
+                </td>
             </tr>
         </table>
         <input type="submit" name="submit" value="Update">

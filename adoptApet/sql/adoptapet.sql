@@ -12,6 +12,7 @@ CREATE TABLE `adoptapet`.`pets` (
   `age` INT NULL,
   `gender` VARCHAR(45) NULL,
   `avail` VARCHAR(45) NOT NULL,
+  `photo` VARCHAR(45) DEFAULT 'nophoto.jpg',
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC));
 

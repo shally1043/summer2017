@@ -13,7 +13,7 @@
     }
 
 ?>
-    <form action="doCreatePet.php" method="post">
+    <form enctype="multipart/form-data" action="doCreatePet.php" method="post">
         <label for="species">Species:</label>
         <input type="text" id="species" name="species" /><br/>
 
@@ -41,7 +41,25 @@
         </select>
         <br/>
 
+        <label for="photo">Photo:</label>
+        <input name="photo" id="photo" type="file" />
+        <br/>
+
         <input type="submit" value="Create" />
     </form>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
