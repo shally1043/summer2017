@@ -44,10 +44,23 @@ function addImage(captionText, url, altText){
     $('#output').append(aFigure);
 }
 
+/*
+We just followed the stuff on this site:
+https://developers.google.com/web/updates/2014/01/Web-apps-that-talk-Introduction-to-the-Speech-Synthesis-API#browser_support
+*/
+function sayOutLoud(someText){
+    window.speechSynthesis.cancel();
+    var msg = new SpeechSynthesisUtterance(someText);
+    window.speechSynthesis.speak(msg);
+}
+
 function processResponse(data){
     console.log(data);
 
     $('#resultCount').text("Found " + data.results.length + " pictures for you.");
+    window.agent.play('Announce');
+    sayOutLoud("Found " + data.results.length + " pictures for you.");
+    window.agent.speak("Found " + data.results.length + " pictures for you.");
 
     if(data.results.length == 0){
         return;
@@ -73,7 +86,20 @@ function processResponse(data){
     );
 }
 
+function loadAgent(agentName){
+    if(window.agent){
+        window.agent.stop();
+        window.agent.hide();
+    }
 
+    clippy.load(agentName, function(clippysAgent){
+        window.agent = clippysAgent;
+        window.agent.show();
+        window.agent.moveTo( 200, 200 );
+    });
+}
+
+loadAgent('Peedy');
 
 
 
