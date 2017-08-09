@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Your Location</title>
+    </head>
+    <body>
+        <script>
+            function showPosition(p){
+                var myLong = p.coords.longitude;
+                var myLat  = p.coords.latitude;
+
+                window.open('https://www.google.com/maps/@' + myLat + ',' + myLong);
+            }
+
+            navigator.geolocation.getCurrentPosition(showPosition);
+
+        </script>
+    </body>
+</html>

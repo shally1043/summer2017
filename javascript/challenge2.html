@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+    In the loop below, use i to affect the background color
+    of each div.
+-->
+<html>
+    <head>
+        <title>Challenge 2</title>
+    </head>
+    <body>
+        <script>
+            for(i=1; i < 255; i++){
+                // HTML color values are in hexadecimal e.g. #RRGGBB (R=red, G=green, B=blue) where each position
+                // is between 0 and FF.  FF is 255 in hexadecimal
+
+                /* Convert i to its hexadecimal representation.  Googling "Javascript decimal to hexadecimal"
+                 * brings up a StackExchange article that says using .toString(16) on a number in Javascript will
+                 * return it's hexadecimal equivalent
+                 */
+                var hexValue = i.toString(16); 
+
+                // All well and good but numbers lower than 16 only return one digit and HTML wants two
+                // digits always so we have to add a 0 if i < 16
+                if(i < 16){
+                    hexValue = "0" + hexValue;
+                }
+
+
+                // Now we can build a color string by adding a '#' and repeating the hex value three times
+                var colorValue = "#" + hexValue + hexValue + hexValue;
+
+                // Here we've added a style attribute to our div and set the background to colorValue.
+                // We've also added the color value to the contents of the div so we can see it on the screen.
+                document.write("<div style='background:" + colorValue + "'>" + i + " (" + colorValue + ")</div>");
+
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+
+    <script>
+        function pageLoaded(evt){
+            console.log(evt);
+        }
+
+        function pageUnloaded(evt){
+            console.log(evt);
+        }
+
+        function mouseClick(evt){
+            console.log(evt);
+        }
+
+        function buttonClicked(evt){
+            alert("ouch!");
+        }
+
+        window.addEventListener('load', pageLoaded);
+        window.addEventListener('unload', pageUnloaded);
+        window.addEventListener('click', mouseClick);
+    </script>
+</head>
+<body>
+    <input id="someText"      type="text" />
+    <input id="clickMeButton" type="button" value="Click me" />
+
+    <script>
+        var theButton = document.getElementById('clickMeButton');
+        theButton.addEventListener('click', buttonClicked);
+
+        var theText = document.getElementById('someText');
+        theText.addEventListener('keyup', function(){ console.log(theText.value); });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

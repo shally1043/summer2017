@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Switch</title>
+</head>
+<body>
+    <script>
+        var aColor = "blue";
+
+        if("blue" == aColor){
+            document.write("Blue is my favorite color.");
+        }else if("yellow" == aColor){
+            document.write("Ducks are yellow.");
+        }else if("red" == aColor){
+            document.write("Fire engines are red.");
+        }else if("green" == aColor){
+            document.write("Grass is green");
+        }else{
+            document.write("I don't know that color.");
+        }
+    </script>
+    <hr />
+    <script>
+        function processColor(anotherColor) {
+            var thingToSay = "";
+
+            switch (anotherColor) {
+                case "blue":
+                    thingToSay = "I like blue.";
+                    break;
+                case "yellow":
+                    thingToSay = "Ducks are yellow";
+                    break;
+                case "red":
+                    thingToSay = "Fire engines are red.";
+                    break;
+                case "green":
+                    thingToSay = "Grass is green";
+                    break;
+                default:
+                    thingToSay = "I don't know that color.";
+            }
+
+            document.getElementById('output').innerText = thingToSay;
+        }
+
+        function processSubmit(){
+            var theInput = document.getElementById('usersColor');
+            processColor(theInput.value);
+        }
+
+    </script>
+    <label for="usersColor">Enter a color:</label>
+    <input type="text" id="usersColor"></input>
+    <input type="submit" onclick="processSubmit()"/>
+    <div id="output"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
