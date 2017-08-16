@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eats!</title>
+    <link rel="stylesheet" href="eats.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="eats.js"></script>
+</head>
+<body>
+    <div class="title">EATS!</div>
+    <div>
+        <label for="grade">Grade:</label>
+        <select id="grade">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select>
+
+        <label for="boro">Borough:</label>
+        <select id="boro">
+            <option value="BRONX">BRONX</option>
+            <option value="BROOKLYN">BROOKLYN</option>
+            <option value="MANHATTAN">MANHATTAN</option>
+            <option value="QUEENS">QUEENS</option>
+            <option value="STATEN ISLAND">STATEN ISLAND</option>
+        </select>
+
+        <label for="cuisine">Cuisine</label>
+        <input type="text" id="cuisine" />
+
+        <button onclick="doSearch()">Search</button>
+    </div>
+    <div id="resultsdiv"></div>
+</body>
+</html>

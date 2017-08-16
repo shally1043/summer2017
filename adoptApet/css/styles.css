@@ -32,3 +32,11 @@ BODY{
     font-weight: bold;
     text-decoration: underline;
 }
+
+.AVAILABLE {
+
+}
+
+.UNAVAILABLE {
+    color: red;
+}

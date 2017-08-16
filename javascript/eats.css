@@ -1,0 +1,20 @@
+HTML{
+    font-family: "Microsoft Sans", sans-serif;
+}
+
+.a {
+    background: #336699;
+}
+
+.b {
+    background: #339966
+}
+
+.c {
+    background: #996633;
+}
+
+.count-div {
+    background: #666666;
+    color: white;
+}

@@ -32,7 +32,7 @@
                 $result->data_seek($i);
                 $aRow = $result->fetch_assoc();
         ?>
-            <tr>
+            <tr class="<?=$aRow['avail']?>">
                 <td><?=$aRow['species']?></td>
                 <td><?=$aRow['breed']?></td>
                 <td><a href="petDetails.php?id=<?=$aRow['id']?>"><?=$aRow['name']?></a></td>
@@ -40,13 +40,32 @@
                 <td><?=$aRow['gender']?></td>
                 <td><?=$aRow['avail']?></td>
                 <td>
+                    <?php if(isAdminUser()){?>
                     <a href="doDeletePet.php?id=<?=$aRow['id']?>">X</a>
+                    <?php } ?>
                 </td>
             </tr>
         <?php } ?>
         </tbody>
     </table>
+    <?php if(isAdminUser()){?>
     <a href="createPet.php">Add a pet</a>&nbsp;&nbsp;<br />
+    <?php } ?>
     Adopt a pet!
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
